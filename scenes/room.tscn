@@ -882,6 +882,15 @@ position = Vector2(337, 458)
 [node name="goin" parent="coins" instance=ExtResource("6_jn645")]
 position = Vector2(708, 406)
 
+[node name="goin11" parent="coins" instance=ExtResource("6_jn645")]
+position = Vector2(706, 321)
+
+[node name="goin13" parent="coins" instance=ExtResource("6_jn645")]
+position = Vector2(752, 321)
+
+[node name="goin12" parent="coins" instance=ExtResource("6_jn645")]
+position = Vector2(730, 321)
+
 [node name="goin2" parent="coins" instance=ExtResource("6_jn645")]
 position = Vector2(625, 332)
 
