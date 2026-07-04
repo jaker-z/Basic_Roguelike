@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://iiomdmst5g7s"]
+
+[ext_resource type="Texture2D" uid="uid://bxk5a37badtwx" path="res://assets/BasicRoguelikeAssets/BasicPlatform.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba0x2"]
+size = Vector2(32, 6)
+
+[node name="platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("1_ba0x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_ba0x2")
+one_way_collision = true

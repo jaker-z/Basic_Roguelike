@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba1ydwd835r5r"]
+
+[ext_resource type="Script" uid="uid://c8e0mjsdbmapx" path="res://scripts/exit_area.gd" id="1_h3otn"]
+
+[node name="exit_area" type="Area2D"]
+script = ExtResource("1_h3otn")

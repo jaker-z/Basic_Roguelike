@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://crbxfln26po3y"]
+
+[ext_resource type="Script" uid="uid://c744tig4bw3f2" path="res://scripts/goin.gd" id="1_awf2d"]
+[ext_resource type="Texture2D" uid="uid://dg44aa4h2dnlr" path="res://assets/BasicRoguelikeAssets/Goin.png" id="2_bh3xr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mfixk"]
+radius = 5.0
+height = 14.0
+
+[node name="goin" type="Area2D"]
+script = ExtResource("1_awf2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bh3xr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mfixk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

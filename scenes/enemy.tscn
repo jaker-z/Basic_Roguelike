@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnkohcm0easq7"]
+
+[ext_resource type="Texture2D" uid="uid://cacl7ghmljovy" path="res://assets/BasicRoguelikeAssets/BasicEnemy.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://lu5dkb0hp7g6" path="res://scripts/enemy.gd" id="1_md0e3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7p1mj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+size = Vector2(14, 39)
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_4ra3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19.5)
+shape = SubResource("RectangleShape2D_5uy6h")
