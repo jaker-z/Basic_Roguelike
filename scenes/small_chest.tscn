@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ntw4325lpgg1"]
+
+[ext_resource type="Script" uid="uid://cjardtujjvgjw" path="res://scripts/small_chest.gd" id="1_i3wiu"]
+[ext_resource type="Texture2D" uid="uid://bimbgylqpwiky" path="res://assets/BasicRoguelikeAssets/SmallChest/SmallChest - 1.png" id="1_s51ea"]
+[ext_resource type="Texture2D" uid="uid://beqdeb7ngm0kk" path="res://assets/BasicRoguelikeAssets/SmallChest/SmallChest - 2.png" id="2_i3wiu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0mkag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s51ea")
+}],
+"loop": 0,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3wiu")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mkag"]
+size = Vector2(50, 24)
+
+[node name="small_chest" type="Area2D" unique_id=904828622]
+collision_mask = 2
+script = ExtResource("1_i3wiu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1272674533]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_0mkag")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=842189603]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_0mkag")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

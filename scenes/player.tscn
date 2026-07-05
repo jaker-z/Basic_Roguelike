@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://5nivqvbi7ryi"]
+[gd_scene format=3 uid="uid://5nivqvbi7ryi"]
 
 [ext_resource type="Texture2D" uid="uid://bdanwvkgulau1" path="res://assets/BasicRoguelikeAssets/BasicCharacter.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://ch7tasexp32rb" path="res://scripts/player.gd" id="1_g2els"]
@@ -9,7 +9,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_3vyb7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -17,14 +17,15 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 height = 40.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1649272392]
 z_index = 5
+collision_layer = 2
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=391545996]
 position = Vector2(-1, -24)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41513104]
 position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_dqkch")
