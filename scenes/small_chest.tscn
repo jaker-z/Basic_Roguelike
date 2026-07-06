@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjardtujjvgjw" path="res://scripts/small_chest.gd" id="1_i3wiu"]
 [ext_resource type="Texture2D" uid="uid://bimbgylqpwiky" path="res://assets/BasicRoguelikeAssets/SmallChest/SmallChest - 1.png" id="1_s51ea"]
 [ext_resource type="Texture2D" uid="uid://beqdeb7ngm0kk" path="res://assets/BasicRoguelikeAssets/SmallChest/SmallChest - 2.png" id="2_i3wiu"]
+[ext_resource type="Texture2D" uid="uid://c7mmnrqeu236h" path="res://assets/BasicRoguelikeAssets/Key.png" id="4_2gaam"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0mkag"]
 animations = [{
@@ -24,7 +25,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mkag"]
-size = Vector2(50, 24)
+size = Vector2(60, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0mkag"]
+font_size = 8
 
 [node name="small_chest" type="Area2D" unique_id=904828622]
 collision_mask = 2
@@ -37,8 +41,20 @@ animation = &"closed"
 autoplay = "closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=842189603]
-position = Vector2(0, -12)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_0mkag")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1346364901]
+position = Vector2(-10, -40)
+texture = ExtResource("4_2gaam")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=2066282641]
+offset_left = 5.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = 6.0
+text = "Enter"
+label_settings = SubResource("LabelSettings_0mkag")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1fsgg5is8cxv"]
+
+[ext_resource type="Script" uid="uid://dqngoq230slhb" path="res://scripts/key.gd" id="1_fttkb"]
+[ext_resource type="Texture2D" uid="uid://c7mmnrqeu236h" path="res://assets/BasicRoguelikeAssets/Key.png" id="1_yk2u2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fttkb"]
+radius = 4.0
+height = 14.0
+
+[node name="key" type="Area2D" unique_id=583520212]
+collision_mask = 2
+script = ExtResource("1_fttkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2000768081]
+texture = ExtResource("1_yk2u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833011301]
+shape = SubResource("CapsuleShape2D_fttkb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
